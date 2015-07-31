@@ -25,16 +25,16 @@ $(document).ready(function(){
       $(this).toggle();
     });
   }
-  // dogToggle();
+  dogToggle();
   function blackOnWhite(){
-    $("#container").on("click",function(){
-    $(this).css("background-color","black");
-  });
-
-    $(this).children().child(3).css("background-color","white");
-
-
+    $("#container").on("click",function(event){
+      $(this).css("background-color","#67ed15");
+      console.log(event.target);
+      if($(event.target).hasClass("box")){
+        $(event.target).css("background-color","white");
+        $(this).css("background-color","black");
+      }
+    });
   }
   blackOnWhite();
-
 });
